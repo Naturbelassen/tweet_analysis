@@ -3,6 +3,7 @@ import sys
 import keyToken
 from nltk import word_tokenize
 from nltk.corpus import stopwords
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 #Validate access rights
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
@@ -46,9 +47,16 @@ class tweetPreProccess(status.text)
             cleanTweet.append(w)
     return cleanTweet
             
-                     
+print(cleanTweet)
 
-    print(cleanTweet)
+# Calculate the score of every token and print them
+sid = SentimeentIntensityAnalyzer()
+for token in cleanTweet
+    print(token)
+    score = sid.polarity_scores(token)
+    for k in sorted(score)
+        print('{0}: {1}, '.format(k, ss[k]), end='')
+    print()
 
     
 
